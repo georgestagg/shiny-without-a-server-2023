@@ -1,5 +1,5 @@
 ---
-title: "<img alt='webR logo' width='700px' src='webr-shiny.png'></img><br>Shiny Without a Server:<br>webR & Shinylive"
+title: "<img alt='webR logo' width='700px' src='images/webr-shiny.png'></img><br>Shiny Without a Server:<br>webR & Shinylive"
 author: "George Stagg<br>Senior Software Engineer, Posit PBC"
 format:
   revealjs:
@@ -33,7 +33,7 @@ A server is a machine, connected to the Internet, that runs 24/7 ready to run yo
 
 ::: {style="text-align: center;"}
 
-![](server-side.png){style="width:55%"}
+![](images/server-side.png){style="width:55%"}
 
 :::
 
@@ -79,13 +79,13 @@ Wouldn't it be great if we could run Shiny apps using static hosting?
 
 ::: {style="text-align: center;"}
 
-![](client-side.png){style="width:55%"}
+![](images/client-side.png){style="width:55%"}
 
 :::
 
-## &nbsp; {background-image="ibm.jpg"}
+## &nbsp; {background-image="images/ibm.jpg"}
 
-## &nbsp; {background-image="phone.jpg"}
+## &nbsp; {background-image="images/phone.jpg"}
 
 
 # How does it work?
@@ -102,7 +102,7 @@ Some technical details
 :::
 
 ::: {.column width="50%" style="text-align:center"}
-![](wasm.svg){style="width:50%"}
+![](images/wasm.svg){style="width:50%"}
 :::
 :::
 
@@ -138,7 +138,7 @@ Benefits of Wasm:
 ::: columns
 
 ::: {.column width="40%"}
-![](emcc.png){style="width:60%; margin-left: 20%"}
+![](images/emcc.png){style="width:60%; margin-left: 20%"}
 :::
 
 ::: {.column width="60%"}
@@ -184,7 +184,7 @@ We have to work around them, replacing standard OS tools with the provided brows
 
 ## Pyodide
 
-![](pyodide.png){alt="The pyodide logo" height="350" fig-align="center"}
+![](images/pyodide.png){alt="The pyodide logo" height="350" fig-align="center"}
 
 ::: {style="text-align: center"}
 [Pyodide](https://pyodide.org/en/stable/) is a port of CPython to WebAssembly
@@ -197,7 +197,7 @@ Supported scientific packages include numpy, pandas, scipy, matplotlib, and scik
 
 ## WebR
 
-![](webr.png){alt="The webR logo" height="350" fig-align="center"}
+![](images/webr.png){alt="The webR logo" height="350" fig-align="center"}
 
 ::: {style="text-align: center"}
 [WebR](https://docs.r-wasm.org/) is a version of the R interpreter built for WebAssembly
@@ -235,7 +235,7 @@ We'll come back to Shiny apps later!
 -   Knowledge of web development is not required to use webR in your own content
 
 ::: {style="text-align: center"}
-![](webr.gif){style="width: 80%; border: 1px solid #889; box-shadow: 2px 2px 15px #889;"}
+![](images/webr.gif){style="width: 80%; border: 1px solid #889; box-shadow: 2px 2px 15px #889;"}
 :::
 
 ::: {style="text-align: right"}
@@ -398,7 +398,7 @@ document.getElementById("plot-observable").append(
 Binary R packages for Wasm are available, hosed at <https://repo.r-wasm.org>
 
 ::: {style="text-align: center"}
-![](repo.png){style="width: 60%"}
+![](images/repo.png){style="width: 60%"}
 :::
 
 **webR 0.2.1:** 10324 packages (about 51% of CRAN) - Note: not all have been tested
@@ -410,7 +410,7 @@ Binary R packages for Wasm are available, hosed at <https://repo.r-wasm.org>
 Tricky to set up, especially for non-JavaScript developers.
 
 ::: {style="text-align: center"}
-![](standalone.png){style="width: 80%; border: 1px solid #889; box-shadow: 2px 2px 15px #889;"}
+![](images/standalone.png){style="width: 80%; border: 1px solid #889; box-shadow: 2px 2px 15px #889;"}
 :::
 
 # Getting started with Shinylive for R
@@ -439,13 +439,13 @@ Option 3: [Embed a Shiny app with Quarto](https://github.com/quarto-ext/shinyliv
 ## Shinylive Online editor <span style="font-size: 50%">🔗 <https://shinylive.io/r/examples/></span>
 
 ::: {style="text-align: center"}
-![](shinylive-editor.png){style="width: 90%; border: 1px solid #889; box-shadow: 2px 2px 15px #889;"}
+![](images/shinylive-editor.png){style="width: 90%; border: 1px solid #889; box-shadow: 2px 2px 15px #889;"}
 :::
 
 ## Shinylive Online editor: Sharing apps
 
 ::: {style="text-align: center"}
-![](share.png){style="width: 60%"}
+![](images/share.png){style="width: 60%"}
 :::
 
 Share a Shiny app with anyone using a single URL: [Example Shinylive App](https://shinylive.io/r/editor/#code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAGwEsAjAJykYE8AKAZwAtaJWAlAB0IdJiw4ATKKSic4pTsIgiAxAAIAIjKjrUjOAFp9RAnE6c+Ac3WG7hteoAqAdzhQA1utLc46oSgwAeoAbiy0UPTUfqRE6txQIX4QtGaM6gBmUASx6dSRcNSctobqlhBm3rycjpJE5hAA5KTqBtSs6iTqUPzqAK7y6XyofYq46m7qBD3qdVW0xSSVMmWyjKR9qI49klUU-fJ7oVDUfTHcjER9VtxXLT5+dBkKtPCdGUdoWxAwqFbasnUAB5SjBSNNGDUfn8AVAACSwYGlLI5IiMdi-f46BEwcb5eiFYoAXim7ACAEFRkQYDJUgFxgEALI9PonAICZQiRyaOAZPh+ACqAElMmj1DBaNFiqg4OkrCdqF0viU7CI+rQkZlTrRJAAFKBWOBklQQdTqDTk9DeWikaIqhym622uD6iCFMlgRmS8zqXWy9QAcQVJHZuC5jo0AGUdXB6Cx1PlWHcJjbuOphqNuhBdncRi1JLy+DbaCRivYHWbLAW44wADJQJOjY0iM1mqMxmt6HqFUVDCB5sv2Futquxliu93h1utjRC-ujRDqSOFOCo9IZMVhRgRKIxOKoRUtA1QPicFqY+3D6fyaI5Od5j1bnfRen+MAANXCkWiiHpV+nAGAQQHoAMKsHQ2ayjUYDqCSAQEOBf6OoBKEAQETjMBAnAShYJYqDBcGBEhqEka2AQBu4kLBIRhosOyAhhiagGzvOpCLiBvgEB49BEAAHr2Ey+A86R3HQUFlLcfTULsBLphUpwFrs5b-maBCcdxfH3k2ASibQUGvgEka3C4nSjGJVF4M4WACgAopyyHqAxU4zuozJ8F2brUAJkgLAeDbWKZpADpeDk0nwE7UM2DltuoADyox5ouABiaI0qQ5C7OQvEtBu6TTKgpB4SFgHcAAzOwWWkPFQXaYQaCFSGYAcoxKnmnFCULr6h7vEcBgAI5nGecC7E+35+Mep7nn8xUAQeRBVR1pAepiuqHuyzlmsom0iPZGg8nybplLKSR5EQVipN4+7dU+VzFKNu7FBNWFTTYylYcd-ogpkfQVA1EDsBmpDjLmowCOoIDORoIHUnm5x+LlMBSbolUzRoTjVOmxTuboBjZIVSTqHAvH6OYlhdOUlQ2pjEksMN6j0B0DzDhoIOkHC+V-VmOaLXCK3dRkP05HhUJmgjSNOETLRfbjQtJOwEMOagcjkMt00AH6voDcL3dEW3qAAvvZMVYAofSMKaDy9oj+TeJLAn6HwhUQDYcjdFM9VFW9Zqs+zHtdNLFAFowEvZfL-5i-kIdLXrhuQ4GFCyjI416N1RAfJb-WDRlxzbmN3TypN4rTV7bU7J0ogdETBAKX4unibQHyZ+YGXDj7fPzZqBiQYwq3zWHDk8cTh7sHIGAR1A7Dj1H7DNa1gHSICJKYrCjGkd7Zn8rBcl5nCdeQqva-EF5hGqAA7AArOS5KaAAQq+qBqVvACMACcMf2fr4ZQ7j5BLrwvTKjejwPgrBLSoHYOqcYgwTrKDAPrAAukAA)
@@ -483,7 +483,7 @@ httpuv::runStaticServer("site")
 <br>Static file output:
 
 ::: {style="text-align: center"}
-![](files.jpg){style="width: 50%"}
+![](images/files.jpg){style="width: 50%"}
 :::
 
 Ready to be uploaded to GitHub Pages or other static web hosting
