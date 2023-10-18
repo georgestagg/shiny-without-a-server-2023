@@ -1,0 +1,191 @@
+[
+  {
+    "objectID": "index.html#traditional-shiny-architecture",
+    "href": "index.html#traditional-shiny-architecture",
+    "title": "Shiny Without a Server:webR & Shinylive",
+    "section": "Traditional Shiny architecture",
+    "text": "Traditional Shiny architecture\nA server is a machine, connected to the Internet, that runs 24/7 ready to run your Shiny app."
+  },
+  {
+    "objectID": "index.html#some-shiny-app-servers",
+    "href": "index.html#some-shiny-app-servers",
+    "title": "Shiny Without a Server:webR & Shinylive",
+    "section": "Some Shiny app servers",
+    "text": "Some Shiny app servers\nOn-prem:\n\nA workstation, under a desk, running RStudio\nA server, in a rack, running Shiny Server\nPosit Connect enterprise hosting\n\n\nCloud:\n\nShinyApps.io\nPosit on Hugging Face\nAWS/Google Cloud/Azure enterprise cloud hosting"
+  },
+  {
+    "objectID": "index.html#static-web-hosting",
+    "href": "index.html#static-web-hosting",
+    "title": "Shiny Without a Server:webR & Shinylive",
+    "section": "Static web hosting",
+    "text": "Static web hosting\nSome web services offer an excellent mix of scalability, features, and cost:\n\nGithub Pages\nNetlify\nCloudflare Pages\nVercel\nQuarto Pub\nProbably lots more…\n\n\nHowever, they can’t run traditional Shiny apps!\nThis is static hosting. No way to run dynamic R or Python code.\n\n\n Wouldn’t it be great if we could run Shiny apps using static hosting?"
+  },
+  {
+    "objectID": "index.html#shinylive-architecture",
+    "href": "index.html#shinylive-architecture",
+    "title": "Shiny Without a Server:webR & Shinylive",
+    "section": "Shinylive architecture",
+    "text": "Shinylive architecture"
+  },
+  {
+    "objectID": "index.html#webassembly-2017",
+    "href": "index.html#webassembly-2017",
+    "title": "Shiny Without a Server:webR & Shinylive",
+    "section": "WebAssembly (2017)",
+    "text": "WebAssembly (2017)\n\n\n\nA portable binary code format\nEnables high-performance applications on web pages\nNear-native execution speed\nSupported by most modern browsers\n\n\n\n\n\n\nBenefits of Wasm:\n\n\n\nContainerisation\nNotebook & literate programming\nUniversal Binaries\n\n\n\nSandboxing\nNumerical Reproducibility\nMobile / Tablet computing"
+  },
+  {
+    "objectID": "index.html#emscripten-2012",
+    "href": "index.html#emscripten-2012",
+    "title": "Shiny Without a Server:webR & Shinylive",
+    "section": "Emscripten (2012)",
+    "text": "Emscripten (2012)\n\n\n\n\n\nC/C++ compiler for WebAssembly\nBased on LLVM/Clang\nOriginally designed for ASM.js in web browsers (predates Wasm!)\nCompiler toolchain for many browser based Wasm projects:  SQLite, FFmpeg, DOSBox, …\n\n\n\n\nEmscripten takes C or C++ source code as input, provides a Unix-like environment, and produces Wasm as output"
+  },
+  {
+    "objectID": "index.html#difficulties-of-wasm",
+    "href": "index.html#difficulties-of-wasm",
+    "title": "Shiny Without a Server:webR & Shinylive",
+    "section": "Difficulties of Wasm",
+    "text": "Difficulties of Wasm\nObservation: Many programming language interpreters are written in C or C++ for Unix/Linux…\n\nBUT: For something like Python or R it’s harder than it first seems\n\nStandard & support libraries (e.g. linear algebra)\nLegacy Fortran code\nGraphics & font support\nNetwork sockets\nLocal file I/O\nThreading and forking\nLimited methods to wait for input\n\n\n\nWasm/Emscripten looks like Unix, but browser security limitations are always there.\nWe have to work around them, replacing standard OS tools with the provided browser APIs."
+  },
+  {
+    "objectID": "index.html#pyodide",
+    "href": "index.html#pyodide",
+    "title": "Shiny Without a Server:webR & Shinylive",
+    "section": "Pyodide",
+    "text": "Pyodide\n\n\n\n\n\n\nPyodide is a port of CPython to WebAssembly\nPyodide makes it possible to install and run Python packages in the browser\nSupported scientific packages include numpy, pandas, scipy, matplotlib, and scikit-learn."
+  },
+  {
+    "objectID": "index.html#webr",
+    "href": "index.html#webr",
+    "title": "Shiny Without a Server:webR & Shinylive",
+    "section": "WebR",
+    "text": "WebR\n\n\n\n\n\n\nWebR is a version of the R interpreter built for WebAssembly\nExecute R code directly in a web browser, without a supporting R server\nAlternatively, run an R process server-side using Node.js"
+  },
+  {
+    "objectID": "index.html#webr-demo-application-httpswebr.r-wasm.orgv0.2.1",
+    "href": "index.html#webr-demo-application-httpswebr.r-wasm.orgv0.2.1",
+    "title": "Shiny Without a Server:webR & Shinylive",
+    "section": "WebR Demo Application 🔗 https://webr.r-wasm.org/v0.2.1/",
+    "text": "WebR Demo Application 🔗 https://webr.r-wasm.org/v0.2.1/"
+  },
+  {
+    "objectID": "index.html#features",
+    "href": "index.html#features",
+    "title": "Shiny Without a Server:webR & Shinylive",
+    "section": "Features",
+    "text": "Features\n\nR code editor, multi document support, syntax highlighting\nContext aware autocompletion\nFolder and file management tools\nMulitple plots, manage and clear plot history\nScreenreader support in R console\nWorks on wide-ranging devices: mobile, tablet, chomebook"
+  },
+  {
+    "objectID": "index.html#the-webr-quarto-extension",
+    "href": "index.html#the-webr-quarto-extension",
+    "title": "Shiny Without a Server:webR & Shinylive",
+    "section": "The webR Quarto extension",
+    "text": "The webR Quarto extension\n\nKnowledge of web development is not required to use webR in your own content\n\n\n\n\n\ncoatless/quarto-webr — James Balamuta"
+  },
+  {
+    "objectID": "index.html#the-webr-quarto-extension-1",
+    "href": "index.html#the-webr-quarto-extension-1",
+    "title": "Shiny Without a Server:webR & Shinylive",
+    "section": "The webR Quarto extension",
+    "text": "The webR Quarto extension\nIn a terminal,\nquarto add coatless/quarto-webr\nIn a Quarto doc,\n```{webr-r}\nfit = lm(mpg ~ am, data = mtcars)\nsummary(fit)\n```"
+  },
+  {
+    "objectID": "index.html#live-and-interactive-r-code",
+    "href": "index.html#live-and-interactive-r-code",
+    "title": "Shiny Without a Server:webR & Shinylive",
+    "section": "Live and interactive R code",
+    "text": "Live and interactive R code"
+  },
+  {
+    "objectID": "index.html#live-and-interactive-r-plotting",
+    "href": "index.html#live-and-interactive-r-plotting",
+    "title": "Shiny Without a Server:webR & Shinylive",
+    "section": "Live and interactive R plotting",
+    "text": "Live and interactive R plotting"
+  },
+  {
+    "objectID": "index.html#modern-text-rendering-features-and-internationalisation",
+    "href": "index.html#modern-text-rendering-features-and-internationalisation",
+    "title": "Shiny Without a Server:webR & Shinylive",
+    "section": "Modern text rendering features and internationalisation",
+    "text": "Modern text rendering features and internationalisation"
+  },
+  {
+    "objectID": "index.html#modern-text-rendering-features-and-internationalisation-1",
+    "href": "index.html#modern-text-rendering-features-and-internationalisation-1",
+    "title": "Shiny Without a Server:webR & Shinylive",
+    "section": "Modern text rendering features and internationalisation",
+    "text": "Modern text rendering features and internationalisation\n\nAny font family available to the web browser can be used in plots\nAccurate font metrics for text sizing and positioning\nAdvanced text features such as ligatures & colour emoji 😃\nRTL text and automatic font fallback for international scripts"
+  },
+  {
+    "objectID": "index.html#integration-of-webr-with-other-web-frameworks",
+    "href": "index.html#integration-of-webr-with-other-web-frameworks",
+    "title": "Shiny Without a Server:webR & Shinylive",
+    "section": "Integration of webR with other web frameworks",
+    "text": "Integration of webR with other web frameworks\nconst ret = await webR.evalR(\"penguins\");\nconst data = await ret.toJs();\nconst penguins = data.values[0].values.map((_, idx) =&gt; {\n  return {\n    species: data.values[0].values[idx],\n    island: data.values[1].values[idx],\n    bill_length_mm: data.values[2].values[idx],\n    bill_depth_mm: data.values[3].values[idx],\n    sex: data.values[6].values[idx],\n  }\n});\n\nPlot.dot(penguins, {\n  x: \"bill_length_mm\",\n  y: \"bill_depth_mm\",\n  stroke: \"species\", symbol: \"species\",\n  channels: {island: \"island\", sex: \"sex\"},\n  tip: true\n}).plot({ grid: true, symbol: { legend: true } })"
+  },
+  {
+    "objectID": "index.html#integration-of-webr-with-other-web-frameworks-1",
+    "href": "index.html#integration-of-webr-with-other-web-frameworks-1",
+    "title": "Shiny Without a Server:webR & Shinylive",
+    "section": "Integration of webR with other web frameworks",
+    "text": "Integration of webR with other web frameworks\n\nLoading..."
+  },
+  {
+    "objectID": "index.html#r-packages",
+    "href": "index.html#r-packages",
+    "title": "Shiny Without a Server:webR & Shinylive",
+    "section": "R packages",
+    "text": "R packages\nBinary R packages for Wasm are available, hosed at https://repo.r-wasm.org\n\n\n\nwebR 0.2.1: 10324 packages (about 51% of CRAN) - Note: not all have been tested"
+  },
+  {
+    "objectID": "index.html#shiny-in-webr",
+    "href": "index.html#shiny-in-webr",
+    "title": "Shiny Without a Server:webR & Shinylive",
+    "section": "Shiny in webR",
+    "text": "Shiny in webR\nService Workers are a JavaScript API that enables Shiny to work with webR.\nTricky to set up, especially for non-JavaScript developers."
+  },
+  {
+    "objectID": "index.html#anyone-can-create-their-own-serverless-shiny-apps",
+    "href": "index.html#anyone-can-create-their-own-serverless-shiny-apps",
+    "title": "Shiny Without a Server:webR & Shinylive",
+    "section": "Anyone can create their own serverless Shiny apps!",
+    "text": "Anyone can create their own serverless Shiny apps!\n\n\nOption 1: Shinylive online editor\n\n\n\n\nOption 2: Convert a Shiny app\n\n\n\n\nOption 3: Embed a Shiny app with Quarto"
+  },
+  {
+    "objectID": "index.html#shinylive-online-editor-httpsshinylive.iorexamples",
+    "href": "index.html#shinylive-online-editor-httpsshinylive.iorexamples",
+    "title": "Shiny Without a Server:webR & Shinylive",
+    "section": "Shinylive Online editor 🔗 https://shinylive.io/r/examples/",
+    "text": "Shinylive Online editor 🔗 https://shinylive.io/r/examples/"
+  },
+  {
+    "objectID": "index.html#shinylive-online-editor-sharing-apps",
+    "href": "index.html#shinylive-online-editor-sharing-apps",
+    "title": "Shiny Without a Server:webR & Shinylive",
+    "section": "Shinylive Online editor: Sharing apps",
+    "text": "Shinylive Online editor: Sharing apps\n\n\n\nShare a Shiny app with anyone using a single URL: Example Shinylive App\nShare a Shiny app from a GitHub Gist: https://shinylive.io/py/app/#gist=e62218aa28bf26e785fc6cb99efe8efe\n🔗 App source code"
+  },
+  {
+    "objectID": "index.html#convert-a-shiny-app",
+    "href": "index.html#convert-a-shiny-app",
+    "title": "Shiny Without a Server:webR & Shinylive",
+    "section": "Convert a Shiny app",
+    "text": "Convert a Shiny app\nInstall the Shinylive R package:\ninstall.packages(\"pak\")\n\npak:pak(\"posit-dev/r-shinylive\")\n\n Convert the app:\nshinylive::export(\"myapp\", \"site\")"
+  },
+  {
+    "objectID": "index.html#shinylive-quarto-extension",
+    "href": "index.html#shinylive-quarto-extension",
+    "title": "Shiny Without a Server:webR & Shinylive",
+    "section": "Shinylive Quarto extension",
+    "text": "Shinylive Quarto extension\nFirst, in a terminal run the command:\nquarto add quarto-ext/shinylive"
+  },
+  {
+    "objectID": "index.html#future-work-and-current-issues",
+    "href": "index.html#future-work-and-current-issues",
+    "title": "Shiny Without a Server:webR & Shinylive",
+    "section": "Future work and current issues",
+    "text": "Future work and current issues\n\nShinylive is experimental! Things are still very much in flux\n\n\n\nLoading R packages works, but is very slow. We’re working on it!\nNot all R packages work in Wasm\nBrowser security restrictions: very limited networking, no raw socket access\nMoving data into and out of the virtual Wasm environment is clunky right now (at best!)\n\n\n\n\nThere are no secrets with a Shinylive app!"
+  }
+]
