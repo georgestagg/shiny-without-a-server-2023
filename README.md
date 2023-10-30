@@ -2,7 +2,7 @@
 
 ## Presented at Jumping Rivers Shiny in Production 2023 Conference
 
-These slides should be build using Quarto.
+These slides should be built using Quarto.
 
 The resulting web-based presentation loads webR into the page several times to demonstrate different use cases. As such, note that the resulting download size is rather large.
 
